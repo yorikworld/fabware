@@ -26,16 +26,25 @@
                     <p>Genres • {{favorite.genres}}</p>
                     <p>Countries • {{favorite.countries}}</p>
                     <p>Directors: </p>
-                    <span *ngFor="let dir of favorite.directors">
-                    <a target="_blank" [attr.href]="'http://www.imdb.com/name/'+dir.id">{{dir.name}}</a>
-                </span>
-                    <div>
-                        <button (click)="removeFromFavorite(favorite)" ion-button clear small color="danger" icon-start>
-                            <ion-icon [name]='"star"'></ion-icon>
-                            Favorite
-                        </button>
+                    <div *ngFor="let dir of favorite.directors">
+                        <a target="_blank" [attr.href]="'http://www.imdb.com/name/'+dir.id">{{dir.name}}</a>
                     </div>
-                    <button ion-button clear item-end>View</button>
+                    <ion-row no-padding>
+                        <ion-col>
+                            <button (click)="removeFromFavorite(favorite)" ion-button clear small color="danger"
+                                    icon-start>
+                                <ion-icon [name]='"star"'></ion-icon>
+                                Favorite
+                            </button>
+                        </ion-col>
+                        <ion-col>
+                            <button (click)="trailerPopup(favorite.idIMDB)" ion-button clear small color="danger"
+                                    icon-start>
+                                <ion-icon name='film'></ion-icon>
+                                Trailer
+                            </button>
+                        </ion-col>
+                    </ion-row>
                 </ion-item>
             </ion-list>
         </ion-card>

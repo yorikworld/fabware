@@ -9,5 +9,8 @@ import { BestPage } from './best';
   imports: [
     IonicPageModule.forChild(BestPage),
   ],
+  entryComponents: [
+    BestPage
+  ]
 })
 export class BestPageModule {}

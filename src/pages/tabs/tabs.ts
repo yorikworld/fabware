@@ -16,8 +16,4 @@ export class TabsPage {
   constructor() {
 
   }
-
-  select(){
-    console.log('123');
-  }
 }

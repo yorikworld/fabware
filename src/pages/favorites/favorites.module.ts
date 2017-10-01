@@ -9,5 +9,8 @@ import { FavoritesPage } from './favorites';
   imports: [
     IonicPageModule.forChild(FavoritesPage),
   ],
+  entryComponents: [
+    FavoritesPage
+  ]
 })
 export class FavoritesPageModule {}

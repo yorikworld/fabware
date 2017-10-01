@@ -12,7 +12,6 @@
 
 </ion-header>
 
-
 <ion-content padding>
     <ion-card *ngFor="let movie of movies">
         <ion-list>
@@ -29,13 +28,20 @@
                 <div *ngFor="let dir of movie.directors">
                     <a target="_blank" [attr.href]="'http://www.imdb.com/name/'+dir.id">{{dir.name}}</a>
                 </div>
-                <div>
-                    <button (click)="favoriteBtn(movie)" ion-button clear small color="danger" icon-start>
-                        <ion-icon [name]='(movie.fav)?"star":"star-outline"'></ion-icon>
-                        Favorite
-                    </button>
-                </div>
-                <!--<button ion-button clear item-end>View</button>-->
+                <ion-row no-padding>
+                    <ion-col>
+                        <button (click)="favoriteBtn(movie)" ion-button clear small color="danger" icon-start>
+                            <ion-icon [name]='(movie.fav)?"star":"star-outline"'></ion-icon>
+                            Favorite
+                        </button>
+                    </ion-col>
+                    <ion-col>
+                        <button (click)="trailerPopup(movie.idIMDB)" ion-button clear small color="danger" icon-start>
+                            <ion-icon name='film'></ion-icon>
+                            Trailer
+                        </button>
+                    </ion-col>
+                </ion-row>
             </ion-item>
         </ion-list>
     </ion-card>

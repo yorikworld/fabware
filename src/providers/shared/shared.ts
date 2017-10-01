@@ -5,6 +5,8 @@ import {Storage} from "@ionic/storage";
 import {BehaviorSubject} from "rxjs/BehaviorSubject";
 import {Observable} from "rxjs/Observable";
 import {fromPromise} from "rxjs/observable/fromPromise";
+import {TrailerComponent} from "../../components/trailer/trailer.component";
+import {ModalController} from "ionic-angular";
 
 /*
   Generated class for the SharedProvider provider.
@@ -16,9 +18,13 @@ import {fromPromise} from "rxjs/observable/fromPromise";
 export class SharedProvider {
   private movies: BehaviorSubject<Array<Object>>;
 
-  constructor(public http: Http, public storage: Storage) {
+  constructor(public http: Http, public storage: Storage, public modalCtrl: ModalController) {
     this.movies = new BehaviorSubject([]);
     this.movies$ = this.getFromStorage();
+  }
+
+  getTralerPopup(movieId){
+    return this.modalCtrl.create(TrailerComponent, {'movieId': movieId});
   }
 
   public createObservable(data): Observable<Array<Object>>{

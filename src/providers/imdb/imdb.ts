@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {Http, RequestOptions} from '@angular/http';
+import {Http} from '@angular/http';
 
 /*
   Generated class for the ImdbProvider provider.
@@ -20,6 +20,12 @@ export class ImdbProvider {
     this.host = 'http://www.myapifilms.com';
     this.service = '/imdb';
     this.api = this.host + this.service;
+  }
+
+  getTrailers(){
+    let options = this.encodeQueryData({'format': 'json', 'trailers': 2, 'page': 0, 'token': this.token});
+//    return this.get(this.api + '/trailers', {search: options});
+    return this.get('assets/trailers.json', {search: options});
   }
 
   getTop(start, end, data = 0, format = 'json'){

@@ -9,5 +9,8 @@ import { DecadePage } from './decade';
   imports: [
     IonicPageModule.forChild(DecadePage),
   ],
+  entryComponents: [
+    DecadePage
+  ]
 })
 export class DecadePageModule {}
