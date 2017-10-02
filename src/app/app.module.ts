@@ -1,16 +1,16 @@
-import { NgModule, ErrorHandler } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import {NgModule, ErrorHandler} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
+import {MyApp} from './app.component';
 
-import { TabsPage } from '../pages/tabs/tabs';
+import {TabsPage} from '../pages/tabs/tabs';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { ImdbProvider } from '../providers/imdb/imdb';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
+import {ImdbProvider} from '../providers/imdb/imdb';
 import {HttpModule} from '@angular/http';
 import {IonicStorageModule} from "@ionic/storage";
-import { SharedProvider } from '../providers/shared/shared';
+import {SharedProvider} from '../providers/shared/shared';
 import {TrailerComponent} from "../components/trailer/trailer.component";
 import {VideoPlayer} from "@ionic-native/video-player";
 import {BestPageModule} from "../pages/best/best.module";
@@ -51,4 +51,5 @@ import {FavoritesPageModule} from "../pages/favorites/favorites.module";
     VideoPlayer
   ]
 })
-export class AppModule {}
+export class AppModule {
+}

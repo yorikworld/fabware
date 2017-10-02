@@ -55,7 +55,7 @@ export class DecadePage implements OnDestroy {
     });
   }
 
-  prepareChartData() {
+  prepareChartData(): void {
     this.movies.forEach(item => {
       let decade = (Math.floor(item['year'] / 10)) + '0-' + (Math.floor(item['year'] / 10)) + '9';
       let position = this.chartLabels.indexOf(decade);

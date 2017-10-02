@@ -26,7 +26,6 @@
         "@ionic-native/video-player": "^4.3.0",
         "@ionic/storage": "2.0.1",
         "chart.js": "^2.7.0",
-        "cordova-plugin-video-player": "git+https://github.com/moust/cordova-plugin-videoplayer.git",
         "ionic-angular": "3.6.1",
         "ionicons": "3.0.0",
         "ng2-charts": "^1.6.0",
@@ -38,10 +37,5 @@
         "@ionic/app-scripts": "2.1.4",
         "typescript": "2.3.4"
     },
-    "description": "An Ionic project for fabware",
-    "cordova": {
-        "plugins": {
-            "com.moust.cordova.videoplayer": {}
-        }
-    }
+    "description": "An Ionic project for fabware"
 }

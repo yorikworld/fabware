@@ -21,6 +21,7 @@ export class BestPage implements OnDestroy {
   movies: Array<Object> = [];
   trailers: Array<Object> = [];
   moviesSubscription: Subscription;
+  trailersSubscription: Subscription;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -31,12 +32,12 @@ export class BestPage implements OnDestroy {
     this.getTrailersData();
   }
 
-  getImdbData() {
+  getImdbData(): void {
     this.moviesSubscription = this.shared.movies$
       .subscribe(data => {
         if (null === data) {
           this.imdbProvider.getTop(1, 20, 1)
-            .subscribe(res => {
+            .subscribe((res: any) => {
                 this.movies = res.json().data.movies;
                 this.shared.movies$ = this.shared.createObservable(res.json().data.movies);
               },
@@ -49,28 +50,30 @@ export class BestPage implements OnDestroy {
       });
   }
 
-  getTrailersData() {
-    this.imdbProvider.getTrailers()
+  getTrailersButtons(movieId): Array<Object>{
+    return this.shared.getTrailersButtons(movieId)
+  }
+
+  getTrailersData(): void {
+    this.trailersSubscription = this.shared.trailers$
       .subscribe(res => {
-        if (res.json().data.trailers[0]) {
-          console.log(res.json().data.trailers[0].trailers);
-          this.trailers = res.json().data.trailers[0].trailers;
-        }
+        this.trailers = res;
       })
   }
 
-  favoriteBtn(movie) {
+  favoriteBtn(movie): void {
     movie.fav = !movie.fav;
     this.shared.movies$ = this.shared.createObservable(this.movies);
   }
 
-  trailerPopup(movieId){
-    let modal = this.shared.getTralerPopup(movieId);
+  trailerPopup(movieId, trailerObj): void{
+    let modal = this.shared.getTrailerPopup(movieId, trailerObj);
     modal.present();
   }
 
   ngOnDestroy() {
     this.moviesSubscription.unsubscribe();
+    this.trailersSubscription.unsubscribe();
   }
 
 }

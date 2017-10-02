@@ -37,8 +37,8 @@
                                 Favorite
                             </button>
                         </ion-col>
-                        <ion-col>
-                            <button (click)="trailerPopup(favorite.idIMDB)" ion-button clear small color="danger"
+                        <ion-col *ngFor="let trailer of getTrailersButtons(favorite.idIMDB)">
+                            <button (click)="trailerPopup(favorite.idIMDB, trailer)" ion-button clear small color="danger"
                                     icon-start>
                                 <ion-icon name='film'></ion-icon>
                                 Trailer

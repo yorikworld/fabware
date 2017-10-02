@@ -29,13 +29,17 @@ export class FavoritesPage implements OnDestroy {
     });
   }
 
-  removeFromFavorite(favorite) {
+  removeFromFavorite(favorite): void {
     favorite.fav = !favorite.fav;
     this.shared.movies$ = this.shared.createObservable(this.favorites);
   }
 
-  trailerPopup(movieId){
-    let modal = this.shared.getTralerPopup(movieId);
+  getTrailersButtons(movieId): Array<Object>{
+    return this.shared.getTrailersButtons(movieId)
+  }
+
+  trailerPopup(movieId, trailerObj): void{
+    let modal = this.shared.getTrailerPopup(movieId, trailerObj);
     modal.present();
   }
 

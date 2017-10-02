@@ -5,31 +5,35 @@
         "type": "Popular Trailers",
         "trailers": [
           {
-            "idIMDB": "tt6161168",
+            "idIMDB": "tt0111161",
             "title": "Red Dead Redemption II",
-            "videoURL": "http://www.imdb.com/video/imdb/vi627357977",
+            "videoURL": "http://www.imdb.com/video/imdb/vi3877612057",
+            "embed": "http://www.imdb.com/videoembed/vi3877612057",
             "type": "video game",
             "duration": "1:30"
           },
           {
-            "idIMDB": "tt2798920",
+            "idIMDB": "tt0111161",
             "title": "Annihilation",
             "videoURL": "http://www.imdb.com/video/imdb/vi2690824473",
+            "embed": "http://www.imdb.com/videoembed/vi2690824473",
             "type": "feature",
             "duration": "1:47"
           },
           {
-            "idIMDB": "tt1966359",
+            "idIMDB": "tt0068646",
             "title": "Father Figures",
-            "videoURL": "http://www.imdb.com/video/imdb/vi4284725529",
+            "videoURL": "http://www.imdb.com/video/imdb/vi1348706585",
+            "embed": "http://www.imdb.com/videoembed/vi1348706585",
             "type": "feature",
             "duration": "2:17",
             "contentRating": "R"
           },
           {
-            "idIMDB": "tt6288694",
+            "idIMDB": "tt0068646",
             "title": "Acts Of Vengeance",
             "videoURL": "http://www.imdb.com/video/imdb/vi2036578585",
+            "embed": "http://www.imdb.com/videoembed/vi2036578585",
             "type": "feature",
             "duration": "1:29",
             "contentRating": "R"
